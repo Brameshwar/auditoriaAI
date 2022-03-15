@@ -1,4 +1,3 @@
-/*
 package com.auditoriaAI.config;
 
 import lombok.Getter;
@@ -26,4 +25,3 @@ public class SendEmailConfig {
     private boolean isAuth;
 
 }
-*/
