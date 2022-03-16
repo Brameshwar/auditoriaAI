@@ -24,4 +24,14 @@ public class SendEmailReqDTO {
     @NotNull(message = "password cannot be Null or Blank")
     private String password;
 
+    @JsonProperty(value = "emailSubject", required = true)
+    @NotNull(message = "emailSubject cannot be Null or Blank")
+    private String emailSubject;
+
+    @JsonProperty(value = "emailContent", required = true)
+    @NotNull(message = "emailContent cannot be Null or Blank")
+    private String emailContent;
+
+
+
 }

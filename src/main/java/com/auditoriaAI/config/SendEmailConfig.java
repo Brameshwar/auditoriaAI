@@ -2,26 +2,33 @@ package com.auditoriaAI.config;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.web.context.annotation.ApplicationScope;
+import org.springframework.stereotype.Component;
 
-@ApplicationScope
+@Component
+@Slf4j
 @Setter
 @Getter
-@PropertySource(value={"classpath:sendEmail.properties"})
+@PropertySource(value={"classpath:smtp.properties"})
 public class SendEmailConfig {
 
-    @Value("${smtpHost}")
+
+    @Value("${mail.smtp.host}")
     private String smtpHost;
 
-    @Value("${smtpPort}")
+    @Value("${mail.smtp.port}")
     private int smtpPort;
 
-    @Value("${enableSsl}")
-    private boolean enableSsl;
+    @Value("${mail.smtp.ssl.enable}")
+    private boolean isSsLRequired;
 
-    @Value("${isAuth}")
-    private boolean isAuth;
+    @Value("${mail.smtp.auth}")
+    private boolean isAuthRequired;
+
+    @Value("${mail.debug}")
+    private boolean enableDebug;
+
 
 }
